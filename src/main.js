@@ -1,8 +1,7 @@
-import Vue from 'vue'
-import App from './App.vue'
-
-Vue.config.productionTip = false
+// Entry point of application
+import Vue from 'vue';
+import App from './App';
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  render: (h) => h(App)
+}).$mount('#app');
