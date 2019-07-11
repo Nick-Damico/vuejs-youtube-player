@@ -1,11 +1,16 @@
 <template>
   <div>
-    Vue.js App
+    VueTube Browser
+    <SearchBar></SearchBar>
   </div>
 </template>
 
 <script>
+import SearchBar from './components/SearchBar';
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    SearchBar
+  }
 };
 </script>
