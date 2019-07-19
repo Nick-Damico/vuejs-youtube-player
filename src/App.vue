@@ -1,8 +1,7 @@
 <!-- Directives can also be declared as v-on:termChange="onTermChange" -->
 <!-- Directive to bind props: v-bind:videos="videos" -->
 <template>
-  <div>
-    VueTube Browser
+  <div class="container">
     <SearchBar @termChange="onTermChange"></SearchBar>
     <VideoList :videos="videos"></VideoList>
   </div>
