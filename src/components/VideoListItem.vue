@@ -1,12 +1,11 @@
 <template lang="html">
-  <li class="list-group-item media">
+  <li class="list-group-item media" @click="onVideoSelect">
     <img
-      class="mr-3"
       :src="thumbnailUrl"
       :alt="description"
     />
     <div class="media-body">
-      {{ title }}
+      {{ video.snippet.title }}
     </div>
   </li>
 </template>
@@ -15,12 +14,14 @@
 export default {
   name: 'VideoListItem',
   props: ['video'],
+  methods: {
+    onVideoSelect() {
+      this.$emit('videoSelect', this.video);
+    }
+  },
   computed: {
     thumbnailUrl() {
-      return this.video.snippet.thumbnails.url;
-    },
-    title() {
-      return this.title.snippet.title;
+      return this.video.snippet.thumbnails.default.url;
     },
     description() {
       return this.video.snippet.description;
@@ -30,6 +31,9 @@ export default {
 </script>
 
 <style scoped>
+  img {
+    margin-right: 1.5rem;
+  }
   li {
     display: flex;
     cursor: pointer;
