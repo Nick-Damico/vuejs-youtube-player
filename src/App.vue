@@ -1,5 +1,10 @@
 <!-- Directives can also be declared as v-on:termChange="onTermChange" -->
 <!-- Directive to bind props: v-bind:videos="videos" -->
+<!--
+Pass Props from a parent Component down to child components
+with the v-bind: directive. Must set a props: ['video'] property and
+value in the child component to recieve a prop from a parent.
+-->
 <template>
   <div class="container">
     <SearchBar @termChange="onTermChange"></SearchBar>
