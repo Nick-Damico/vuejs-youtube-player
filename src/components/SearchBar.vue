@@ -1,6 +1,9 @@
 <template>
-  <div class="input-container">
-    <input @input="onInput"/>
+  <div>
+    <h3>Youtube<span>API</span>Viewer</h3>
+    <div class="input-container">
+      <input v-on:keyup.enter="onSubmit" placeholder="Search Videos" />
+    </div>
   </div>
 </template>
 
@@ -8,7 +11,7 @@
   export default {
     name: 'SearchBar',
     methods: {
-      onInput: function(event) {
+      onSubmit: function(event) {
         // $emit is how we send data up to a parent.
         this.$emit('termChange', event.target.value);
       }
@@ -24,5 +27,10 @@
   div {
     text-align: center;
     margin: 20px;
+  }
+
+  span {
+    color: red;
+    font-weight: bold;
   }
 </style>
